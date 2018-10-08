@@ -19,6 +19,9 @@ export const getQuestions = numberOfQuestions => {
           helpers.randomizeChoices(response.data.results);
           dispatch(getQuestionsSuccess(response.data.results));
         }
+      })
+      .catch((error) => {
+        throw error;
       });
   };
 };

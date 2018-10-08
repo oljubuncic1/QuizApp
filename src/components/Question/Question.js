@@ -28,6 +28,7 @@ class Question extends PureComponent {
     for(let i  = 0; i < this.props.question.choices.length; i++) {
       questionData.push({
         'label': html.unescape(this.props.question.choices[i]),
+        'value': this.props.question.choices[i],
         'selected': i === 0,
         'color': '#ff5050',
       });
@@ -51,7 +52,7 @@ class Question extends PureComponent {
   getSelectedChoice = (questionData) => {
     for(let i = 0;i < questionData.length;i++) {
       if(questionData[i].selected)
-        return questionData[i].label;
+        return questionData[i].value;
     }
   };
 
